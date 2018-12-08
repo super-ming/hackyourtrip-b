@@ -1,0 +1,30 @@
+#feature {
+  display: flex;
+  width: 100%;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+#features button {
+  background: white;
+  color: orange;
+  font-size: 24px;
+  padding: 10px
+}
+
+#features button:focus {
+  outline:0;
+}
+
+#features p {
+  font-size: 24px;
+}
+
+#features button:hover {
+  color: black;
+  box-shadow: 3px 3px 3px orange;
+}
