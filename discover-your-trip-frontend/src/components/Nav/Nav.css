@@ -1,0 +1,11 @@
+nav {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+nav span {
+  flex: 1;
+  font-size: 18px;
+}

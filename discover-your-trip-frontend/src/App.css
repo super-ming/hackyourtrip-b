@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+#intro {
+  font-size: 20px;
+  margin: 25px;
+  width: 75%;
+  background: orange;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px lightgray;
+}
