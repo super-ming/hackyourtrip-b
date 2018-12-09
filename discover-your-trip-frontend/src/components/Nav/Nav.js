@@ -3,12 +3,26 @@ import './Nav.css';
 
 export default class Nav extends Component {
   render() {
-    return (
-      <nav>
-        <span>About</span>
-        <span>Discover</span>
-        <span>Contact</span>
-      </nav>
-    )
+    const { isSignedIn, onRouteChange } = this.props;
+    if(isSignedIn) {
+      return (
+        <nav>
+          <p onClick={() => onRouteChange('signin')} className=''>
+            Sign Out
+          </p>
+        </nav>
+      );
+    } else {
+      return (
+        <nav>
+          <p onClick={() => onRouteChange('signin')} className=''>
+            Sign In
+          </p>
+          <p onClick={() => onRouteChange('register')} className=''>
+            Register
+          </p>     
+        </nav>
+      );
+    }
   }
 }

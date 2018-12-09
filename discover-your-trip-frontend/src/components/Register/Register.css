@@ -1,0 +1,39 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-cont {
+  width: 80%;
+}
+
+.reg-title {
+  font-size: 34px;
+}
+
+.reg-cont label {
+  font-size: 20px;
+}
+
+.reg-cont input {
+  font-size: 20px;
+}
+
+.reg-sel {
+  margin: 15px;
+}
+
+.reg-name, .reg-email, .reg-pass {
+  display: flex;
+}
+
+.left-col {
+  width: 30%;
+  text-align: right;
+  margin-right: 25px;
+}
+
+.right-col {
+  width: 50%;
+}

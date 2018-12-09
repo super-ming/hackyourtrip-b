@@ -5,17 +5,18 @@ nav {
   margin-right: 0;
 }
 
-nav span {
+nav p {
   flex: 1;
   font-size: 18px;
+  cursor: pointer;
 }
 
-nav span {
+nav p {
   text-decoration: none;
   position: relative;
 }
 
-nav span:after {
+nav p:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -28,7 +29,7 @@ nav span:after {
   width: 0;
 }
 
-nav span:hover:after {
+nav p:hover:after {
   width: 100%;
   left: 0;
 }
