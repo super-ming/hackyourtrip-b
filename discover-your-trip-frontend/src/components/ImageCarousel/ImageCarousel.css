@@ -1,0 +1,11 @@
+.carousels {
+  font-size: 24px;
+  margin: 25px;
+  width: 25%;
+  height: auto;
+  margin-right: 25px;
+}
+
+.carousel-inner {
+  height: 300px;
+}

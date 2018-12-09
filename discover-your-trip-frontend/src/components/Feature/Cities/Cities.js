@@ -19,7 +19,7 @@ export default class Cities extends Component {
       <div>
         Information from api about cities in {this.props.country}
         <div className="cityChoose">
-          City: 
+          City:
           <select onChange={(e) => this.handleCityInput(e)}>
             <option value="New York">New York</option>
             <option value="Bangkok">Bangkok</option>
