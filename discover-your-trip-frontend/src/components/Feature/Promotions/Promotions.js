@@ -76,7 +76,7 @@ export default class Promotions extends Component {
           City:
           <input onChange={(e) => this.handleCityInput(e)}></input>
         </div>
-        <button onClick={() => this.handleRefine()}>Refine</button>
+        <button onClick={() => this.handleRefine()}>Update</button>
         <div id="promo-cards">
           {availableOffers}
         </div>

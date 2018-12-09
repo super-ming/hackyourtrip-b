@@ -1,0 +1,37 @@
+.signin-title {
+  font-size: 34px;
+}
+
+.signin-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.signin-form {
+  font-size: 20px;
+}
+
+.signin-form fieldset {
+  width: 80%;
+}
+
+.sign-left {
+  width: 30%;
+  text-align: right;
+  margin-right: 25px;
+}
+
+.sign-right {
+  width: 30%;
+}
+
+.sign-left, .sign-right {
+  margin: 15px;  
+}
+
+.sign-email, .sign-pass {
+  display: flex;
+}

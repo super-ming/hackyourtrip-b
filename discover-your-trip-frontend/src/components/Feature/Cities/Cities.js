@@ -7,9 +7,9 @@ export default class Cities extends Component {
     super()
     this.state = {
       city: 'New York',
-      cityInfo: '',
-      cityMerchants: [],
-      filteredCityInfo: [],
+      cityInfo: null,
+      cityMerchants: null,
+      filteredCityInfo: null,
       refineBy: 'hotels'
     }
   }
@@ -18,13 +18,16 @@ export default class Cities extends Component {
     this.setState({
       city: e.target.value
     })
-    this.getCityData();
   }
 
-  handleRefineInput(e) {
+  handlemcc(e) {
     this.setState({
       refineBy: e.target.value
     })
+  }
+
+  handleRefineData() {
+    this.getCityData();
   }
 
   componentDidMount() {
@@ -62,16 +65,16 @@ export default class Cities extends Component {
       return city._id.city === this.state.city;
       })
       cityCard = <CityCard cityInfo={filteredCityInfo[0]._id} merchants={this.state.cityMerchants} />
-    }
-    if (this.state.cityMerchants) {
-      refinedMerchants = this.state.cityMerchants.filter(merchant => {
-        return merchant.mcc === this.state.refineBy;
-      })
+      if (this.state.cityMerchants) {
+        refinedMerchants = this.state.cityMerchants.filter(merchant => {
+          return merchant.mcc === this.state.refineBy;
+        })
+      }
       merchants = refinedMerchants.map((merchant, i) => {
         return <MerchantCard id={i} merchant={merchant} />
       })
-    }
       console.log('merchants', refinedMerchants);
+    }
 
     return (
       <div>
@@ -90,14 +93,15 @@ export default class Cities extends Component {
             <option value="Singapore">Singapore</option>
             <option value="Toronto">Toronto</option>
           </select>
-          <span className='cities-sel-label'>Refine:</span>
-          <select onChange={(e) => this.handleRefineInput(e)}>
+          <span className='cities-sel-label'>Refine By:</span>
+          <select onChange={(e) => this.handlemcc(e)}>
             <option value="hotels">Hotels</option>
             <option value="retail">Retail</option>
             <option value="restaurants">Restaurants</option>
             <option value="Attractions">Attractions</option>
           </select>
         </div>
+        <button onClick={() => {this.handleRefineData()}}>Update</button>
       {cityCard}
       <div id='merch-container'>
         {merchants}
