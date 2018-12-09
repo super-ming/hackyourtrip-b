@@ -3,6 +3,14 @@
   flex-direction: column;
 }
 
+.window {
+  display: flex;
+}
+
+.lounge-list{
+  width: 25%;
+}
+
 .cityChoose {
   margin-bottom: 50px;
   font-size: 18px;
