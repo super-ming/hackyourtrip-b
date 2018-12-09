@@ -33,11 +33,11 @@ export default class Feature extends Component {
   render() {
     let info;
     if (this.state.route === 'lounges') {
-      info = <Lounges />
+      info = <Lounges country={this.state.country} />
     } else if (this.state.route === 'cities') {
-      info = <Cities />
+      info = <Cities country={this.state.country} />
     } else if (this.state.route === 'promotions') {
-      info = <Promotions />
+      info = <Promotions country={this.state.country} />
     }
     return (
       <div id="features">
