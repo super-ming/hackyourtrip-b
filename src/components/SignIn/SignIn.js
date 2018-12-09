@@ -16,8 +16,8 @@ export default class SignIn extends Component {
     this.setState({signInPassword: event.target.value})
   }
 
-  onSubmitSignIn() {
-    fetch('https://discover-your-trip.herokuapp.com/api/signin', {
+  onSubmitSignIn = () => {
+    fetch('https://desolate-ridge-72290.herokuapp.com/signin', {
       method:'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -34,7 +34,6 @@ export default class SignIn extends Component {
     })
   }
   render() {
-    const { onRouteChange } = this.props;
     return (
       <article className="signin-form">
         <main className="">
@@ -44,7 +43,7 @@ export default class SignIn extends Component {
               <div className="sign-email">
                 <label className="sign-left" htmlFor="email-address">Email</label>
                 <input className="sign-right" 
-                       onChange={this.onEmailChange}
+                       onChange={(e) => this.onEmailChange(e)}
                        type="email" 
                        name="email-address"  
                        id="email-address" />
@@ -52,7 +51,7 @@ export default class SignIn extends Component {
               <div className="sign-pass">
                 <label className="sign-left" htmlFor="password">Password</label>
                 <input className="sign-right" 
-                       onChange={this.onPasswordChange}
+                       onChange={(e) => this.onPasswordChange(e)}
                        type="password" 
                        name="password"  
                        id="password" />

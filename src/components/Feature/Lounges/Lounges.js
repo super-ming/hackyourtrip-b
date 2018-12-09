@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Lounges.css';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
-import Feed from '../Feed/feed';
 
 export default class Lounges extends Component {
   constructor() {
