@@ -1,0 +1,37 @@
+.merchant-card {
+  font-size: 24px;
+  width: 25%;
+  background: orange;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px lightgray;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: all .3s
+}
+
+.merchant-card:hover {
+  transform: scale(1.05);
+}
+
+.merch-name {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.merch-anchor, .merch-anchor:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@media screen and (max-width: 1366px) {
+  .merchant-card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .merchant-card {
+    width: 75%;
+  }
+}
