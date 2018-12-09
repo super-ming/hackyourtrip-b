@@ -6,8 +6,8 @@
 #button-container {
   display: flex;
   justify-content: space-around;
+  margin: 15px;
 }
-
 
 #features button {
   background: white;
@@ -27,4 +27,12 @@
 #features button:hover {
   color: black;
   box-shadow: 3px 3px 3px orange;
+}
+
+#countryChoose {
+  margin: 5px;
+}
+
+#countryChoose select {
+  margin: 5px;
 }
