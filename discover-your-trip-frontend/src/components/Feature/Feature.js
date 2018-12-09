@@ -8,9 +8,28 @@ export default class Feature extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'lounges'
+      route: 'lounges',
+      code: ''
     }
   }
+
+  componentDidMount() {
+    const corsProxy = "https://cors-anywhere.herokuapp.com/";
+    // let code = btoa(`${process.env.REACT_APP_API_KEY}:${process.env.REACT_APP_API_SECRET}`);
+    // console.log(code)
+    let code = 'bDd4eGZkNWU0OTBjMTc4ODRlNDY5MWE2NzcxMzVhZDQ5NWQyOmU0ZDlmZTY5OTM0YTQzNjQ4NWZkZWVkMmY2YmY2ZDA1';
+    let scope = 'CITYGUIDES DCIOFFERS DCILOUNGES'
+    fetch(corsProxy + `https://apis.discover.com/auth/oauth/v2/token?grant_type=client_credentials&scope=${scope}`, {
+      method: "POST",
+      headers: {
+        'Authorization': 'Basic ' + code,
+        'Content-Type': 'application/x-www-form-urlencoded', 
+        'Cache-Control': 'no-cache',
+      }
+  })
+  .then(resp => resp.json())
+  .then(data => this.setState({ code:data.access_token }))
+}
 
   handleLounges() {
     this.setState({
@@ -33,11 +52,11 @@ export default class Feature extends Component {
   render() {
     let info;
     if (this.state.route === 'lounges') {
-      info = <Lounges country={this.state.country} />
+      info = <Lounges country={this.state.country} code={this.state.code} />
     } else if (this.state.route === 'cities') {
-      info = <Cities country={this.state.country} />
+      info = <Cities country={this.state.country} code={this.state.code} />
     } else if (this.state.route === 'promotions') {
-      info = <Promotions country={this.state.country} />
+      info = <Promotions country={this.state.country} code={this.state.code} />
     }
     return (
       <div id="features">
