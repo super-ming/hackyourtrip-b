@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PromoCard from './PromoCard/PromoCard';
 import FocusedCard from './FocusedCard/FocusedCard';
 import './Promotions.css';
-import Details from '../Details/details';
-import ImageCarousel from '../../ImageCarousel/ImageCarousel';
 
 export default class Promotions extends Component {
   constructor() {
@@ -68,7 +66,7 @@ export default class Promotions extends Component {
       } else {
         availableOffers = <FocusedCard revertFocus={this.handleFocusUpdate} offer={this.state.focusedCard}/>
       }
-  
+
       console.log(offers)
     }
 

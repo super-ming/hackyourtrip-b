@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import CityCard from './CityCard/CityCard';
 import MerchantCard from './MerchantCard/MerchantCard';
 import './Cities.css';
-import Details from '../Details/details';
-import ImageCarousel from '../../ImageCarousel/ImageCarousel';
 export default class Cities extends Component {
   constructor() {
     super()
@@ -57,8 +55,8 @@ export default class Cities extends Component {
       .then(data => this.setState({ cityMerchants: data.result }))
   }
 
-  render() {  
-    let filteredCityInfo = [], cityCard, refinedMerchants, merchants;       
+  render() {
+    let filteredCityInfo = [], cityCard, refinedMerchants, merchants;
     if (this.state.cityInfo && this.state.cityInfo !== undefined) {
       filteredCityInfo = this.state.cityInfo.filter(city => {
       return city._id.city === this.state.city;
@@ -74,7 +72,7 @@ export default class Cities extends Component {
       })
     }
       console.log('merchants', refinedMerchants);
-    
+
     return (
       <div>
         <div className="cityChoose">

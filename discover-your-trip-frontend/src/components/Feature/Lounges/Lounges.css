@@ -11,6 +11,30 @@
   width: 25%;
 }
 
+.details {
+  background-color: orange;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+  font-size: 20px;
+
+}
+
+.lounge-details {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: left;
+}
+
+.lounge-details h3{
+  width: 100%;
+}
+
+.lounge-details p {
+   width: 95%;
+}
+
 .cityChoose {
   margin-bottom: 50px;
   font-size: 18px;
