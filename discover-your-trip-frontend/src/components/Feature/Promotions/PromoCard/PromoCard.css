@@ -1,0 +1,35 @@
+.promo-card {
+  width: 25%;
+  margin: 20px;
+  padding: 10px;
+  background: orange;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px lightgray;
+  transition: all .3s;
+}
+
+.promo-card:hover {
+  transform: scale(1.1)
+}
+
+.promo-card-title {
+  display: flex;
+} 
+
+.promo-merch-name {
+  margin-left: 25px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1366px) {
+  .promo-card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .promo-card {
+    width: 80%;
+  }
+}
