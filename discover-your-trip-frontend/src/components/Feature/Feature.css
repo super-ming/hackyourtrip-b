@@ -6,7 +6,8 @@
 #button-container {
   display: flex;
   justify-content: space-around;
-  margin: 15px;
+  margin: 15px 15px 50px 15px;
+
 }
 
 #features button {
@@ -22,6 +23,7 @@
 
 #features p {
   font-size: 24px;
+  margin-bottom: 50px;
 }
 
 #features button:hover {
