@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Promotions.css';
+import Details from '../Details/details';
+import ImageCarousel from '../../ImageCarousel/ImageCarousel';
 
 export default class Promotions extends Component {
   constructor() {
@@ -23,8 +25,12 @@ export default class Promotions extends Component {
       <div>
         Information from api about Promotions {this.props.country}
         <div className="cityChoose">
-          City: 
+          City:
           <input onChange={(e) => this.handleCityInput(e)}></input>
+        </div>
+        <div className="window d-flex">
+          <ImageCarousel />
+          <Details name={this.state.route}/>
         </div>
       </div>
     )

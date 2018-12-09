@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Cities.css';
+import Details from '../Details/details';
+import ImageCarousel from '../../ImageCarousel/ImageCarousel';
 export default class Cities extends Component {
   constructor() {
     super()
@@ -25,6 +27,10 @@ export default class Cities extends Component {
             <option value="Bangkok">Bangkok</option>
             <option value="Rome">Rome</option>
           </select>
+        </div>
+        <div className="window d-flex">
+          <ImageCarousel />
+          <Details name={this.state.route}/>
         </div>
       </div>
     )
