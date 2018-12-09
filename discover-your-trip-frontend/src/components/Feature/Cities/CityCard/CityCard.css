@@ -1,0 +1,20 @@
+#city-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#city-card-name {
+  font-size: 45px;
+  align-self: flex-start;
+  margin-left: 20%;
+  margin-bottom: 0;
+  text-decoration: underline orange;
+  
+}
+
+#city-card-desc {
+  width: 80%;
+  font-size: 24px;
+  align-self: center;
+  text-align: left;
+}

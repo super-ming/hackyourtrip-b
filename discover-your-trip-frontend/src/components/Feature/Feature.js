@@ -16,7 +16,6 @@ export default class Feature extends Component {
   componentDidMount() {
     const corsProxy = "https://cors-anywhere.herokuapp.com/";
     // let code = btoa(`${process.env.REACT_APP_API_KEY}:${process.env.REACT_APP_API_SECRET}`);
-    // console.log(code)
     let code = 'bDd4eGZkNWU0OTBjMTc4ODRlNDY5MWE2NzcxMzVhZDQ5NWQyOmU0ZDlmZTY5OTM0YTQzNjQ4NWZkZWVkMmY2YmY2ZDA1';
     let scope = 'CITYGUIDES DCIOFFERS DCILOUNGES'
     fetch(corsProxy + `https://apis.discover.com/auth/oauth/v2/token?grant_type=client_credentials&scope=${scope}`, {
@@ -60,7 +59,7 @@ export default class Feature extends Component {
     }
     return (
       <div id="features">
-        <p>What would you like to learn more about</p>
+        <p className="p">What would you like to learn more about</p>
         <div id="button-container">
           <button onClick={() => this.handleLounges()}>Discover Lounges</button>
           <button onClick={() => this.handleCities()}>Discover Cities</button>
