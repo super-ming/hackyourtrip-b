@@ -9,9 +9,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'home',
+      route: 'signin',
       isSignedIn: false
     }
+  }
+
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      joined: data.joined
+    }})
   }
 
   onRouteChange = (route) => {
@@ -39,8 +48,8 @@ class App extends Component {
         </div> 
         : (
           this.state.route === 'signin'
-          ? <SignIn onRouteChange={this.onRouteChange} />
-          : <Register onRouteChange={this.onRouteChange}  />
+          ? <SignIn onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
+          : <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
         )
       }
       </div>

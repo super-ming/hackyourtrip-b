@@ -21,7 +21,7 @@ export default class Register extends Component {
     this.setState({password: event.target.value})
   }
   onSubmitRegister = () => {
-    fetch('https://discover-your-trip.herokuapp.com/api/register', {
+    fetch('hhttps://desolate-ridge-72290.herokuapp.com/register', {
       method:'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
