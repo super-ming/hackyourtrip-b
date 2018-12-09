@@ -8,7 +8,7 @@ export default class Feature extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'lounges',
+      route: 'lounges'
     }
   }
 
