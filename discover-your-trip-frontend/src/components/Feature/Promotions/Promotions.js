@@ -5,20 +5,32 @@ export default class Promotions extends Component {
   constructor() {
     super()
     this.state = {
-      city: '',
-
-      merchantName: 'Sky Lounge at  Golden Tulip Sovereign Hotel Bangkok',
-      merchant_email: "pr@gthbkk.com",
-      merchant_phone: "6602-641-4777",
-      merchant_website: "www.goldentulipbangkok.com",
+      city: 'chicago',
+      offers: '',
     }
   }
+
+  componentDidMount() {
+    const corsProxy = "https://cors-anywhere.herokuapp.com/";
+    fetch(corsProxy + `https://apis.discover.com/dci-offers/v2/offers?destination=${this.state.city}&lang=en&sortdir=asc`, {
+      method: "GET",
+      headers: {
+        'Authorization': 'Bearer ' + this.props.code,
+        'x-dfs-api-plan': 'DCIOFFERS_SANDBOX',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(resp => resp.json())
+    .then(data => this.setState({ offers: data.result }))
+  }
+
   handleCityInput(e) {
     this.setState({
       country: e.target.value
     })
   }
   render() {
+    console.log(this.state.offers)
     return (
       <div>
         Information from api about Promotions {this.props.country}
@@ -26,6 +38,7 @@ export default class Promotions extends Component {
           City: 
           <input onChange={(e) => this.handleCityInput(e)}></input>
         </div>
+
       </div>
     )
   }
